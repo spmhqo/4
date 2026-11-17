@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>পিজিপি ওয়ার্কফ্লো (PGP Workflow)</title>
+  <title>4 Departments</title>
   <link rel="icon" href="spm.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-base: #050a14;
@@ -21,7 +21,6 @@
       --gold-border: rgba(223, 192, 104, 0.42);
       --sapphire-light: #60a5fa;
       --sapphire-mid: #2563eb;
-      --sapphire-dark: #1e3a8a;
       --link-text: #93c5fd;
       --link-visited: #c4b5fd;
       --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(255, 255, 255, 0.04);
@@ -44,13 +43,13 @@
         linear-gradient(160deg, #050a14 0%, #0b1428 50%, #060b16 100%);
       background-attachment: fixed;
       color: var(--text-primary);
-      font-family: "Inter", "Hind Siliguri", "Noto Sans Bengali", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       -webkit-text-size-adjust: 100%;
       position: relative;
       overflow-x: hidden;
     }
 
-    /* Subtle executive grid backdrop */
+    /* Subtle executive architectural grid backdrop */
     body::before {
       content: "";
       position: fixed;
@@ -67,23 +66,26 @@
 
     .container {
       width: 100%;
-      max-width: 960px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 54px 20px 64px;
+      padding: 58px 20px 64px;
       position: relative;
       z-index: 1;
     }
 
-    .page-header {
+    .header-wrap {
       text-align: center;
       margin-bottom: 36px;
     }
 
-    .page-title {
-      margin: 0 0 10px;
-      font-size: 2.2rem;
+    .page-header {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 2.5rem;
       font-weight: 800;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.25;
       background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 65%, #94a3b8 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -91,26 +93,12 @@
       filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
     }
 
-    .page-subtitle {
-      display: inline-block;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      padding: 4px 16px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(223, 192, 104, 0.15) 0%, rgba(223, 192, 104, 0.04) 100%);
-      border: 1px solid rgba(223, 192, 104, 0.3);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
-    }
-
     .header-divider {
       width: 120px;
       height: 2px;
-      margin: 22px auto 0;
+      margin: 20px auto 0;
       background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-      opacity: 0.7;
+      opacity: 0.72;
     }
 
     .table-responsive {
@@ -173,7 +161,7 @@
     }
 
     td {
-      padding: 22px 28px;
+      padding: 24px 28px;
       font-size: 16px;
       line-height: 1.85;
       vertical-align: top;
@@ -182,26 +170,24 @@
       color: #e2e8f0;
     }
 
-    .step-title,
-    td > strong {
+    .step-title {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       font-weight: 700;
       font-size: 0.85rem;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--gold-light);
       background: linear-gradient(180deg, rgba(223, 192, 104, 0.18) 0%, rgba(180, 140, 45, 0.07) 100%);
       border: 1px solid var(--gold-border);
-      padding: 4px 14px;
+      padding: 5px 15px;
       border-radius: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 4px 12px rgba(0, 0, 0, 0.25);
     }
 
-    .step-title::before,
-    td > strong::before {
+    .step-title::before {
       content: "";
       width: 6px;
       height: 6px;
@@ -211,36 +197,30 @@
       flex-shrink: 0;
     }
 
-    td > strong {
-      margin-bottom: 0;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-
     a {
+      display: inline-block;
       color: var(--link-text);
       text-decoration: none;
       font-weight: 500;
-      padding: 2px 9px;
-      border-radius: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
       background: linear-gradient(180deg, rgba(37, 99, 235, 0.22) 0%, rgba(29, 78, 216, 0.12) 100%);
       border: 1px solid rgba(96, 165, 250, 0.28);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-      transition: all 0.2s ease;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 4px 12px rgba(0, 0, 0, 0.22);
+      transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     a:hover {
       color: #ffffff;
       background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
       border-color: rgba(244, 223, 155, 0.55);
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.32);
     }
 
     a:visited {
       color: var(--link-visited);
-      border-color: rgba(167, 139, 250, 0.3);
+      border-color: rgba(167, 139, 250, 0.32);
     }
 
     a:visited:hover {
@@ -250,13 +230,10 @@
 
     @media (max-width: 600px) {
       .container {
-        padding: 28px 12px 40px;
+        padding: 32px 12px 44px;
       }
-      .page-title {
-        font-size: 1.55rem;
-      }
-      .page-subtitle {
-        font-size: 0.78rem;
+      .page-header {
+        font-size: 1.75rem;
       }
       .table-responsive {
         border-radius: 16px;
@@ -264,75 +241,46 @@
       td {
         padding: 18px 16px;
         font-size: 15px;
-        line-height: 1.8;
+        line-height: 1.75;
+      }
+      a {
+        padding: 5px 11px;
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header class="page-header">
-      <h1 class="page-title">পিজিপি ওয়ার্কফ্লো (PGP Workflow)</h1>
-      <span class="page-subtitle">Executive Process Index</span>
+    <div class="header-wrap">
+      <h1 class="page-header">4 Departments</h1>
       <div class="header-divider"></div>
-    </header>
-
+    </div>
     <div class="table-responsive">
       <table>
         <tbody>
           <tr>
             <td>
-              <span class="step-title">Step#1:</span><br>
-              Select একটা প্রোডাক্ট – পিজিপি
+              <span class="step-title">Step#1: Product</span><br>
+              <a href="https://spmhqo.github.io/sell/" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/sell/</a>
             </td>
           </tr>
           <tr>
             <td>
-              <span class="step-title">Step#2:</span><br>
-              অ্যানালাইজ ইট -&gt; <a href="analyze-a-pgp.html" target="_blank" rel="noopener noreferrer">analyze-a-pgp.html</a><br>
-              রি-নেম<br>
-              পজিশনিং<br>
-              ডেসক্রিপসন<br>
-              Repack the PGP<br><br>
-              <a href="find-gap-understand-product.html" target="_blank" rel="noopener noreferrer">find-gap-understand-product.html</a>
+              <span class="step-title">Step#2: Community Content</span><br>
+              <a href="https://spmhqo.github.io/master/p.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/master/p.html</a>
             </td>
           </tr>
           <tr>
             <td>
-              <span class="step-title">Step#3:</span><br>
-              লিস্টিং অ্যাসেটস<br>
-              <a href="https://spmhqo.github.io/dp/graphy-dot-com-sales-copy.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/dp/graphy-dot-com-sales-copy.html</a><br>
-              <a href="https://spmhqo.github.io/dp/graphy-com-banner.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/dp/graphy-com-banner.html</a><br><br>
-              সেলস কপি <a href="bangla-sc.html" target="_blank" rel="noopener noreferrer">bangla-sc.html</a><br>
-              সেলস সাইট <a href="bangla-sp.html" target="_blank" rel="noopener noreferrer">bangla-sp.html</a>
+              <span class="step-title">Step#3: Meta</span><br>
+              <a href="https://spmhqo.github.io/fba/" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/fba/</a>
             </td>
           </tr>
           <tr>
             <td>
-              <span class="step-title">Step#4:</span><br>
-              আইস কোল্ড ট্রাফিক<br>
-              [1] DSP<br>
-              [2] OPC - Blog: <a href="ict.html" target="_blank" rel="noopener noreferrer">itc.html</a> | <a href="https://spmhqo.github.io/master/human-content.html" target="_blank" rel="noopener noreferrer">human-content.html</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="step-title">Step#5:</span><br>
-              ব্রিট সিস্টেম সোস্যাল<br><br>
-              [1] <a href="brit-system.html" target="_blank" rel="noopener noreferrer">brit-system.html</a><br>
-              [2] <a href="britt-social-text.html" target="_blank" rel="noopener noreferrer">britt-social-text.html</a><br>
-              [3] <a href="the-first-comment.html" target="_blank" rel="noopener noreferrer">the-first-comment.html</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="step-title">Story Post</span><br>
-              <a href="story-post.html" target="_blank" rel="noopener noreferrer">story-post.html</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>Reference:</strong> <a href="facebook_groups_research.html" target="_blank" rel="noopener noreferrer">facebook_groups_research.html</a>
+              <span class="step-title">Step#4: WhatsApp</span><br>
+              <a href="https://spmhqo.github.io/wa/" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/wa/</a>
             </td>
           </tr>
         </tbody>
